@@ -529,6 +529,22 @@ export interface SystemsHeroSectionData {
   imageAlt?: string;
 }
 
+export interface WhyIp3ReasonItem {
+  id: string;
+  number: string;
+  title: string;
+  description: string;
+}
+
+export interface WhyIp3Config {
+  badge: string;
+  titlePrefix: string;
+  titleHighlight: string;
+  imageUrl: string;
+  imageAlt?: string;
+  reasons: WhyIp3ReasonItem[];
+}
+
 export interface EightSystemsConfig {
   badge: string;
   titleMain: string;

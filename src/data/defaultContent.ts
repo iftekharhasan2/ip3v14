@@ -30,6 +30,7 @@ import {
   SiteThemeConfig,
   StoryTheme,
   SystemsHeroSectionData,
+  WhyIp3Config,
   EightSystemsConfig,
   CorridorHeroConfig,
   CorridorImage,
@@ -77,6 +78,7 @@ export interface WebsiteData {
   themeConfig: SiteThemeConfig;
   storyThemes?: StoryTheme[];
   systemsHero?: SystemsHeroSectionData;
+  whyIp3?: WhyIp3Config;
   eightSystems?: EightSystemsConfig;
   corridorHero?: CorridorHeroConfig;
   /** Site navigation: mega-menu columns, links and promos. */
@@ -889,15 +891,15 @@ export const defaultStoryThemes: StoryTheme[] = [
 
 export const defaultEightSystemsConfig: EightSystemsConfig = {
   badge: 'Operationalized Across 8 Interconnected Realities',
-  titleMain: 'Eight sectors. One ',
-  titleHighlight: 'integrated delivery model.',
+  titleMain: 'Operationalized Across ',
+  titleHighlight: '8 Interconnected Realities.',
   fontFamily: 'newsreader',
   glowIntensity: 1,
   systems: SYSTEMS_DATA,
 };
 
 export const defaultSystemsHero: SystemsHeroSectionData = {
-  badge: 'POLICY • ECONOMICS • DEVELOPMENT FINANCE • IMPLEMENTATION',
+  badge: 'BUILT FOR COMPLEX MANDATES',
   titlePrefix: 'Turning complex policy challenges into',
   titleHighlight: 'implementable, investable solutions.',
   description:
@@ -968,6 +970,44 @@ export const defaultCorridorHero: CorridorHeroConfig = {
   ],
 };
 
+export const defaultWhyIp3: WhyIp3Config = {
+  badge: "02 — WHY IP³",
+  titlePrefix: "FOUR REASONS CLIENTS",
+  titleHighlight: "choose us",
+  imageUrl: "/images/why_ip3_collaboration.jpg",
+  imageAlt: "Two women collaborating over digital policy insights and tablet interface",
+  reasons: [
+    {
+      id: "reason-1",
+      number: "01",
+      title: "From polycrisis to polysolutions",
+      description:
+        "Economic, institutional, environmental and technological risks overlap. We work across eight connected sectors with cross-cutting capability in economics, finance, governance, data and implementation.",
+    },
+    {
+      id: "reason-2",
+      number: "02",
+      title: "Translation, not theory",
+      description:
+        "Evidence converted into delivery architecture: strategies, project preparation, institutional reform and results systems.",
+    },
+    {
+      id: "reason-3",
+      number: "03",
+      title: "Research that changes decisions",
+      description:
+        "Decision-ready diagnostics, business cases and evaluations — not publications for their own sake.",
+    },
+    {
+      id: "reason-4",
+      number: "04",
+      title: "A convenor between worlds",
+      description:
+        "Structured policy dialogue, investment forums and technical working groups that align governments, capital and implementers.",
+    },
+  ],
+};
+
 export const DEFAULT_WEBSITE_DATA: WebsiteData = {
   slides: defaultSlides,
   movie: defaultMovie,
@@ -990,6 +1030,7 @@ export const DEFAULT_WEBSITE_DATA: WebsiteData = {
   themeConfig: defaultThemeConfig,
   storyThemes: defaultStoryThemes,
   systemsHero: defaultSystemsHero,
+  whyIp3: defaultWhyIp3,
   eightSystems: defaultEightSystemsConfig,
   corridorHero: defaultCorridorHero,
   navigation: defaultNavigation,

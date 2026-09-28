@@ -6,13 +6,14 @@ import type {
   TeamMember, ResearchSectionData, OperationalFront, ParallaxCardItem, FocusAreaItem,
   ProjectItemData, ServiceSolutionItem, TreeFrameworkData, TrustMatrixData,
   TestimonialSectionData, SiteThemeConfig, StoryTheme, SystemsHeroSectionData,
+  WhyIp3Config,
   EightSystemsConfig,
   CorridorHeroConfig,
 } from '../types';
 
 // Defaults live in ../data/defaultContent so `npm run db:seed` can load them in
 // Node. Re-exported here because components already import them from this file.
-import { DEFAULT_WEBSITE_DATA, defaultThemeConfig, defaultEightSystemsConfig, defaultCorridorHero } from '../data/defaultContent';
+import { DEFAULT_WEBSITE_DATA, defaultThemeConfig, defaultEightSystemsConfig, defaultCorridorHero, defaultWhyIp3 } from '../data/defaultContent';
 import type { WebsiteData } from '../data/defaultContent';
 import type { PrimaryNavItem, NavbarConfig } from '../data/navigationData';
 
@@ -28,6 +29,7 @@ export {
   defaultParallaxCards,
   defaultTeamMembers,
   defaultEightSystemsConfig,
+  defaultWhyIp3,
   defaultCorridorHero,
 } from '../data/defaultContent';
 export { primaryNav as defaultNavigation, defaultNavbarConfig } from '../data/navigationData';
@@ -59,6 +61,7 @@ interface CMSContextType {
   updateThemeConfig: (themeConfig: SiteThemeConfig) => void;
   updateStoryThemes: (storyThemes: StoryTheme[]) => void;
   updateSystemsHero: (systemsHero: SystemsHeroSectionData) => void;
+  updateWhyIp3: (whyIp3: WhyIp3Config) => void;
   updateEightSystems: (eightSystems: EightSystemsConfig) => void;
   updateCorridorHero: (corridorHero: CorridorHeroConfig) => void;
   updateNavigation: (navigation: PrimaryNavItem[]) => void;
@@ -523,6 +526,10 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children, readOnly = f
     setData((prev) => ({ ...prev, systemsHero }));
   };
 
+  const updateWhyIp3 = (whyIp3: WhyIp3Config) => {
+    setData((prev) => ({ ...prev, whyIp3 }));
+  };
+
   const updateEightSystems = (eightSystems: EightSystemsConfig) => {
     setData((prev) => ({ ...prev, eightSystems }));
   };
@@ -593,6 +600,7 @@ export const CMSProvider: React.FC<CMSProviderProps> = ({ children, readOnly = f
         updateThemeConfig,
         updateStoryThemes,
         updateSystemsHero,
+        updateWhyIp3,
         updateEightSystems,
         updateCorridorHero,
         updateNavigation,

@@ -246,33 +246,35 @@ export const PolySolutionsSection: React.FC<PolySolutionsSectionProps> = ({
       >
         <div className="w-full max-w-7xl mx-auto flex flex-col space-y-8 sm:space-y-10">
           {/* Horizon Header */}
-          <div className="flex flex-col space-y-3 w-full">
+          <div className="flex flex-col items-start text-left space-y-6 w-full max-w-4xl mb-4">
             <div className="flex items-center gap-2">
-              <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-[0.22em] uppercase text-teal-700">
-                IP3 SECTOR EXPERTISE
+              <span className="font-mono text-[11px] sm:text-xs font-semibold tracking-[0.22em] text-[#1C1917] uppercase">
+                IP3 SECTOR <span className="text-[#8B3A2A] font-bold">EXPERTISE</span>
               </span>
             </div>
 
-            <h3
-              className="font-serif font-bold tracking-tight leading-[1.08] text-slate-900"
-              style={{
-                fontSize: 'clamp(22px, 3.4vw, 54px)',
-                maxWidth: '100%',
-              }}
+            <h2
+              className="font-serif font-normal text-[#1C1917] tracking-[-0.03em] overflow-visible w-full text-left leading-[1.08] sm:leading-[1.05]"
+              style={{ fontSize: 'clamp(2.5rem, 5vw, 4.75rem)' }}
             >
-              {themes[0]?.headline || 'Whole-Systems Architecture'}
-            </h3>
+              <span className="block text-[#1C1917]">
+                From Polycrisis to
+              </span>
+              <span className="block italic text-[#8B3A2A]">
+                Polysolutions.
+              </span>
+            </h2>
 
-            <p className="text-slate-600 text-base sm:text-lg lg:text-[19px] font-normal leading-relaxed max-w-4xl">
+            <p
+              className="font-sans text-[#7A6B63] text-lg sm:text-xl lg:text-[22px] leading-relaxed font-normal text-left max-w-4xl"
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
               IP3 works across eight interconnected sectors where economic, institutional, environmental and technological risks overlap. We combine specialist sector knowledge with cross-cutting capabilities in economics, finance, governance, data and implementation.
             </p>
           </div>
 
           {/* Eight Systems Architecture */}
           <div className="flex flex-col space-y-4 w-full">
-            <span className="text-xs font-mono uppercase tracking-wider font-semibold text-[#b84a32]">
-              {data.eightSystems?.badge || 'Operationalized Across 8 Interconnected Realities'}
-            </span>
             <EightSystemsSection />
           </div>
         </div>

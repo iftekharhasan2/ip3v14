@@ -243,21 +243,27 @@ export const EightSystemsHero: React.FC<EightSystemsHeroProps> = ({
             <div
               id="system-pill-blank"
               style={{
-                paddingLeft: '27px',
+                textAlign: 'start',
+                paddingLeft: 0,
                 paddingTop: 0,
                 paddingRight: 0,
                 paddingBottom: 0,
                 backgroundColor: 'transparent',
               }}
-              className="relative w-full h-full min-h-[360px] flex flex-col justify-start text-left select-text outline-none border-0 bg-transparent p-0 shadow-none"
+              className="relative w-full h-full min-h-[360px] flex flex-col justify-start items-start text-left text-start select-text outline-none border-0 bg-transparent p-0 shadow-none"
             >
-              <div className="w-full">
+              <div className="w-full text-left text-start">
                 <h1
-                  style={{ fontSize: '83px' }}
-                  className={`${getFontClass()} leading-[1.0] sm:leading-[0.98] tracking-[-0.03em] font-normal text-slate-900`}
+                  style={{ fontSize: 'clamp(2.4rem, 4vw, 56px)', textAlign: 'start' }}
+                  className={`${getFontClass()} leading-[1.08] sm:leading-[1.02] tracking-[-0.03em] font-normal text-slate-900 text-left text-start`}
                 >
-                  <span className="inline">Eight sectors. One </span>
-                  <span className="inline text-slate-500">integrated delivery model.</span>
+                  <span className="block text-left text-start">{titleMain || 'Operationalized Across '}</span>
+                  <span
+                    className="block text-slate-500 text-[54px] text-left text-start"
+                    style={{ fontSize: '54px', textAlign: 'start' }}
+                  >
+                    {titleHighlight || '8 Interconnected Realities.'}
+                  </span>
                 </h1>
               </div>
             </div>
