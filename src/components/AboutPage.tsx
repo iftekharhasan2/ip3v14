@@ -652,6 +652,31 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       </div>
 
       <main className="w-full">
+        {/* ===================== IMAGE STREAM CORRIDOR (CMS CONTROLLED) ===================== */}
+        {corridorConfig.enabled !== false && (
+          <section
+            className="w-full relative overflow-hidden bg-neutral-950 h-[70vh] min-h-[520px] max-h-[780px] mb-8 border-b border-neutral-800 select-none shadow-2xl"
+            aria-label="Visual corridor journey"
+          >
+            <ImageStreamHero
+              images={corridorConfig.images && corridorConfig.images.length > 0 ? corridorConfig.images : STREAM_HERO_IMAGES}
+              cards={corridorConfig.cards || corridorConfig.images?.length || 8}
+              speed={corridorConfig.speed || 20}
+              axis={corridorConfig.axis || 55}
+              className="h-full w-full bg-neutral-950"
+            >
+              {corridorConfig.title && (
+                <div className="absolute top-6 left-6 z-10 pointer-events-none">
+                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase bg-black/65 backdrop-blur-md text-white/90 border border-white/20 shadow-lg">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B3A2A]" />
+                    {corridorConfig.title}
+                  </span>
+                </div>
+              )}
+            </ImageStreamHero>
+          </section>
+        )}
+
         {/* ===================== HERO ===================== */}
         <section className="hero wrap" aria-labelledby="pagetitle">
           <div className="hero__inner">
@@ -708,31 +733,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <figcaption>Every section below is a stage on this path — complexity to intelligence, intelligence to architecture, architecture to <span className="text-[#8B3A2A] font-semibold">implementation</span> and impact.</figcaption>
           </figure>
         </div>
-
-        {/* ===================== IMAGE STREAM CORRIDOR (CMS CONTROLLED) ===================== */}
-        {corridorConfig.enabled !== false && (
-          <section
-            className="w-full relative overflow-hidden bg-neutral-950 h-[70vh] min-h-[520px] max-h-[780px] my-6 border-y border-neutral-800 select-none shadow-2xl"
-            aria-label="Visual corridor journey"
-          >
-            <ImageStreamHero
-              images={corridorConfig.images && corridorConfig.images.length > 0 ? corridorConfig.images : STREAM_HERO_IMAGES}
-              cards={corridorConfig.cards || corridorConfig.images?.length || 8}
-              speed={corridorConfig.speed || 20}
-              axis={corridorConfig.axis || 55}
-              className="h-full w-full bg-neutral-950"
-            >
-              {corridorConfig.title && (
-                <div className="absolute top-6 left-6 z-10 pointer-events-none">
-                  <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono tracking-wider uppercase bg-black/65 backdrop-blur-md text-white/90 border border-white/20 shadow-lg">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B3A2A]" />
-                    {corridorConfig.title}
-                  </span>
-                </div>
-              )}
-            </ImageStreamHero>
-          </section>
-        )}
 
         {/* ===================== WHO WE ARE ===================== */}
         <section className="section section--alt" id="who" aria-labelledby="who-h">
